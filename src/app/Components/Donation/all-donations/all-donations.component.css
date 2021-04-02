@@ -1,0 +1,22 @@
+#donation_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #donation_table td, #donation_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #donation_table tr:nth-child(even){background-color: #EDF2F4;}
+  
+  #donation_table tr:hover {background-color: #ddd;}
+  
+  #donation_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2B2D42;
+    color: white;
+  }
