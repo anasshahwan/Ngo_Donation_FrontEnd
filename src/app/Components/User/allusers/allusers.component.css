@@ -1,0 +1,67 @@
+/* ---------------  Table Design ---------------------*/
+#users_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #users_table td, #users_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+#users_table tr:nth-child(even){background-color: #EDF2F4;}
+
+#users_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2B2D42;
+  color: white;
+}
+
+/* -------------------- Button  styles     --------------*/
+button {
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button.delBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+}
+button.delBtn:hover {
+  background-color: #EF233C;
+  color: white;
+}
+
+button.editBtn {
+  background-color: #8D99AE; 
+  color: white; 
+  border: 2px solid #9fa7b6;
+}
+button.editBtn:hover {
+  background-color: #9da6b4;
+  color: white;
+}
+
+button.addBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+  text-align: center; 
+  float:right; 
+  width: 180px;
+}
+button.addBtn:hover {
+  background-color: #EF233C;
+  color: white;
+}
