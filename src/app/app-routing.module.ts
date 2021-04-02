@@ -9,32 +9,34 @@ import { AddeventComponent } from './Components/Event/addevent/addevent.componen
 import { AddshipmentinfoComponent } from './Components/Cart/addshipmentinfo/addshipmentinfo.component';
 import { AddcartitemsComponent } from './Components/Cart/addcartitems/addcartitems.component';
 import { CartComponent } from './Components/Cart/cart/cart.component';
-
+import { AuthGuard } from './Services/Auth/auth-guard.guard'
+import { NotfoundComponent } from './Components/notfound/notfound.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'home', pathMatch:'full'},
-  {path: 'home', component:HomeComponent},
+  {path: '', redirectTo:'login', pathMatch:'full'},
+{path: 'home', component:HomeComponent , canActivate: [AuthGuard]},
 
   // User related paths
   {path: 'login', component:LoginComponent},
-  {path: 'Users', component:AllusersComponent},
+  {path: 'Users', component:AllusersComponent , canActivate: [AuthGuard]},
   
 
   //Donation related paths
-  {path: 'Donations', component:AllDonationsComponent},
+  {path: 'Donations', component:AllDonationsComponent, canActivate: [AuthGuard]},
   
 
   //Event related paths
-  {path: 'Events', component:AlleventsComponent},
-  {path: 'Events/add', component:AddeventComponent},
+  {path: 'Events', component:AlleventsComponent, canActivate: [AuthGuard]},
+  {path: 'Events/add', component:AddeventComponent, canActivate: [AuthGuard]},
 
 
   //payment/cart related paths
-  {path: 'Cart/addshipmentinfo', component:AddshipmentinfoComponent},
-  {path: 'Cart/addcartitems', component:AddcartitemsComponent},
-  {path: 'Cart/cart', component:CartComponent},
+  {path: 'Cart/addshipmentinfo', component:AddshipmentinfoComponent, canActivate: [AuthGuard]},
+  {path: 'Cart/addcartitems', component:AddcartitemsComponent, canActivate: [AuthGuard]},
+  {path: 'Cart/cart', component:CartComponent , canActivate: [AuthGuard]},
   
-
+// not found page component
+{ path: '**', pathMatch   : 'full', component: NotfoundComponent}
 
 ];
 

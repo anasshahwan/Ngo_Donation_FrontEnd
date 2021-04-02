@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  currentUser = {'token':'',
+  '_id':''
+};  
+  constructor(private _router:Router) {}
 
   ngOnInit(): void {
+    this.getData();
+    console.log(this.currentUser.token)
+    console.log(this.currentUser._id)
+   
+
   }
+
+  getData(){
+    var retrievedObject = localStorage.getItem('localStorageUserData') || '{}';
+    this.currentUser = JSON.parse(retrievedObject);
+
+  }
+
+  
+
 
 }

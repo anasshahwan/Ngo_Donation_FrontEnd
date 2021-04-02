@@ -1,3 +1,4 @@
+<app-topbar></app-topbar>
 <div>
     <h3 style="text-align: center;"> User Management </h3>
 <div style="margin-bottom:5px;"><button  class="addBtn">Add User</button></div>
@@ -10,14 +11,15 @@
     <th></th>
     <th></th>
   </tr>
-  <tr>
+  
+  <tr *ngFor="let user of users">
     <!-- Placholder data!!!!  Please replace with database data -->  
-    <td>TestFirstName</td>
-    <td>TestLastName</td>
-    <td>Test@yahoo.com</td>
-    <td>User</td>
-    <td style="text-align: center;"><button class="editBtn">Edit</button></td>
-    <td style="text-align: center;"><button class="delBtn">Delete</button></td>
+    <td>{{user.firstname}}</td>
+    <td>{{user.lastname}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.role | objecttoarray}}</td>
+    <td style="text-align: center;" ><button [routerLink]="['/edituser',user._id]"  class="editBtn">Edit</button></td>
+    <td style="text-align: center;"><button  [routerLink]="['/deleteuser',user._id]" class="delBtn">Delete</button></td>
   </tr>
   
 </table>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/Auth/login/login.component';
@@ -14,6 +14,12 @@ import { AddeventComponent } from './Components/Event/addevent/addevent.componen
 import { CartComponent } from './Components/Cart/cart/cart.component';
 import { AddcartitemsComponent } from './Components/Cart/addcartitems/addcartitems.component';
 import { AddshipmentinfoComponent } from './Components/Cart/addshipmentinfo/addshipmentinfo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './Services/Auth/auth-guard.guard';
+import { AuthService } from './Services/Auth/auth-service.service';
+import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { TopbarComponent } from './Components/topbar/topbar.component';
+import { ObjectToArrayPipe } from './Pipes/objecttoarray.pipe';
 
 @NgModule({
   declarations: [
@@ -28,13 +34,20 @@ import { AddshipmentinfoComponent } from './Components/Cart/addshipmentinfo/adds
     AddeventComponent,
     CartComponent,
     AddcartitemsComponent,
-    AddshipmentinfoComponent
+    AddshipmentinfoComponent,
+    NotfoundComponent,
+    TopbarComponent,
+    ObjectToArrayPipe,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [HttpClientModule,AuthGuard, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
