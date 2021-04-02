@@ -1,0 +1,11 @@
+<form class= "submit-form">
+    <h3 class="title">{{title}}</h3>  
+    <div class="container">
+      <label for="eventName"><b>New Event </b></label>
+      <input type="text" placeholder="Event Name: " name="eventName" required>
+       
+      <button class="submitBtn" type="submit">Add Event</button>
+      <button  class="backBtn" [routerLink]="[allDonationsLink]">All Donations</button>
+
+    </div>
+  </form>

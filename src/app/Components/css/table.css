@@ -1,0 +1,104 @@
+/* ---------------  Table Design ---------------------*/
+#basic_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #basic_table td, #basic_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+#basic_table tr:nth-child(even){background-color: #EDF2F4;}
+
+#basic_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  text-align: left;
+  background-color: #2B2D42;
+  color: white;
+}
+
+/* -------------------- Button  styles     --------------*/
+button{
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button.delBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+}
+button.delBtn:hover {
+  background-color: #EF233C;
+  color: white;
+}
+
+button.editBtn {
+  background-color: #8D99AE; 
+  color: white; 
+  border: 2px solid #9fa7b6;
+}
+button.editBtn:hover {
+  background-color: #9da6b4;
+  color: white;
+}
+
+button.addBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+  text-align: center; 
+  float:right; 
+  width: 180px;
+}
+button.addBtn:hover {
+  background-color: #EF233C;
+  color: white;
+}
+
+button.backBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+  text-align: center; 
+  float:left; 
+  width: 180px;
+}
+button.backBtn:hover {
+  background-color: #EF233C;
+  color: white;
+}
+
+button.eventBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+  padding: 10px 40px;
+  margin: 30px;
+}
+button.eventBtn:hover {
+  background-color: #EF233C;
+  color: white;
+}
+
+button.submitBtn {
+  background-color: #D90429; 
+  color: white; 
+  border: 2px solid #D90429;
+}
+button.submitBtn:hover {
+  background-color: #EF233C;
+  color: white;
+  opacity: 0.8;
+}

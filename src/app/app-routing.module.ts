@@ -4,6 +4,12 @@ import { LoginComponent } from './Components/Auth/login/login.component';
 import { AllDonationsComponent } from './Components/Donation/all-donations/all-donations.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AllusersComponent } from './Components/User/allusers/allusers.component';
+import { AlleventsComponent } from './Components/Event/allevents/allevents.component';
+import { AddeventComponent } from './Components/Event/addevent/addevent.component';
+import { AddshipmentinfoComponent } from './Components/Cart/addshipmentinfo/addshipmentinfo.component';
+import { AddcartitemsComponent } from './Components/Cart/addcartitems/addcartitems.component';
+import { CartComponent } from './Components/Cart/cart/cart.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
@@ -15,9 +21,20 @@ const routes: Routes = [
   
 
   //Donation related paths
-  {path: 'Donations', component:AllDonationsComponent}
+  {path: 'Donations', component:AllDonationsComponent},
   
+
+  //Event related paths
+  {path: 'Events', component:AlleventsComponent},
+  {path: 'Events/add', component:AddeventComponent},
+
+
   //payment/cart related paths
+  {path: 'Cart/addshipmentinfo', component:AddshipmentinfoComponent},
+  {path: 'Cart/addcartitems', component:AddcartitemsComponent},
+  {path: 'Cart/cart', component:CartComponent},
+  
+
 
 ];
 

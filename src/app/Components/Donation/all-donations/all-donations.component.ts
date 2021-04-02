@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-donations.component.css']
 })
 export class AllDonationsComponent implements OnInit {
-
+  addEventLink = '/Events/add'
   constructor() { }
 
   ngOnInit(): void {

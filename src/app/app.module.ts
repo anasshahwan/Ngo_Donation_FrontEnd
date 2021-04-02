@@ -9,6 +9,11 @@ import { AllDonationsComponent } from './Components/Donation/all-donations/all-d
 import { HomeComponent } from './Components/home/home.component';
 import { AllusersComponent } from './Components/User/allusers/allusers.component';
 import { EdituserComponent } from './Components/User/edituser/edituser.component';
+import { AlleventsComponent } from './Components/Event/allevents/allevents.component';
+import { AddeventComponent } from './Components/Event/addevent/addevent.component';
+import { CartComponent } from './Components/Cart/cart/cart.component';
+import { AddcartitemsComponent } from './Components/Cart/addcartitems/addcartitems.component';
+import { AddshipmentinfoComponent } from './Components/Cart/addshipmentinfo/addshipmentinfo.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { EdituserComponent } from './Components/User/edituser/edituser.component
     AllDonationsComponent,
     HomeComponent,
     AllusersComponent,
-    EdituserComponent
+    EdituserComponent,
+    AlleventsComponent,
+    AddeventComponent,
+    CartComponent,
+    AddcartitemsComponent,
+    AddshipmentinfoComponent
   ],
   imports: [
     BrowserModule,

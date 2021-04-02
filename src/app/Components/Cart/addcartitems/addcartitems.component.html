@@ -1,0 +1,22 @@
+<div>
+    <form class= "submit-form">
+        <h3 class="title">{{title}}</h3>  
+        <div class="container" >
+        <table>
+            <tr><td></td><th>Check for Monthly Reccuring Gift </th></tr>
+            <tr *ngFor="let event of events;">
+                <td>
+          <label for="{{event}}.value"><b>{{event}} $</b></label>
+          <input type="text" placeholder="" name="{{event}}.value">
+          </td>
+          <td>
+            <input type="checkbox" name="{{event}}.reoccuring">
+          </td>
+            </tr>
+          <button class="submitBtn" type="submit">Submit</button>
+          <button  class="cancelBtn" [routerLink]="[addShipmentInfoLink]">Back</button>
+    
+        </table>
+        </div>
+      </form></div>
+        
