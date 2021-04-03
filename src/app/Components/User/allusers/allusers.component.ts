@@ -10,6 +10,7 @@ import { UserService } from 'src/app/Services/Users/user.service';
 export class AllusersComponent implements OnInit {
   users: UserModelForAllData[];
   errorMsg: any;
+  addUserLink = '/addUser';
   constructor(private userService:UserService,) { }
 
   ngOnInit(): void {
@@ -30,8 +31,17 @@ export class AllusersComponent implements OnInit {
     );
   }
 
- 
-
+ delete(id:any, i:any){
+   console.log(id);
+   if(window.confirm('Are you sure you want to delete user?')){
+     this.userService.deleteUser(id).subscribe((res) =>{
+       this.userService.deleteUser(id).subscribe((res) => {
+         this.users.splice(i, 1);
+       })
+     })
+   }
+ }
+  
 
 
 }

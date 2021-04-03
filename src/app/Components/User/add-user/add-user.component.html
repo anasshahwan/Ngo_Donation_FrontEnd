@@ -1,0 +1,43 @@
+<app-topbar></app-topbar>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" style="width: 40%;">
+    <h3 class="title">{{title}}</h3>  
+
+    <div class= "container">
+
+      <div class="form-group">
+        <label for="firstname"><b>First Name:</b> </label>
+        <input class="form-control" type="text" class="form-control"  id="firstname" formControlName="firstname" required >
+      </div>
+
+      <div class = "form-group">
+        <label for="lastname"><b>Last Name </b></label>
+        <input class="form-control" type="text" class="form-control" id="lastname" formControlName="lastname" required  >
+      </div>
+
+      <div class = "form-group">
+        <label for="email"><b>Email</b></label>
+        <input class="form-control" type="text" class="form-control"  id="email" formControlName="email" required >
+      </div>
+
+    <div class = "form-group">
+      <label for="password"><b>Password </b></label>
+      <input class="form-control"  type="text" class="form-control"  id="password" required >
+    </div>
+
+    <div class = "form-group">
+      <label for="role"><b>Role </b></label>
+      <select class="form-control"  formControlName="role" id="role" required >
+        <option value="6065e41222aef04b96b66dc3">Admin</option>
+        <option value="6065e3ac89e1f04accc64b41">User</option>
+      </select>
+    </div>
+    
+      <div class = "form-group">
+      <button class="submit">Add User</button>
+      </div>
+
+      <button  class="backBtn"  routerLink="/Users/">Cancel</button>
+
+    </div>
+
+</form>

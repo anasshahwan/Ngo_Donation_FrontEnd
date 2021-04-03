@@ -11,15 +11,16 @@ import { AddcartitemsComponent } from './Components/Cart/addcartitems/addcartite
 import { CartComponent } from './Components/Cart/cart/cart.component';
 import { AuthGuard } from './Services/Auth/auth-guard.guard'
 import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { AddUserComponent } from './Components/User/add-user/add-user.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
-{path: 'home', component:HomeComponent , canActivate: [AuthGuard]},
+  {path: 'home', component:HomeComponent , canActivate: [AuthGuard]},
 
   // User related paths
   {path: 'login', component:LoginComponent},
   {path: 'Users', component:AllusersComponent , canActivate: [AuthGuard]},
-  
+  {path: 'addUser', component:AddUserComponent, canActivate: [AuthGuard]},
 
   //Donation related paths
   {path: 'Donations', component:AllDonationsComponent, canActivate: [AuthGuard]},
