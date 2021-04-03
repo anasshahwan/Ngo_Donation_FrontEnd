@@ -36,7 +36,6 @@ export class EdituserComponent implements OnInit {
     this.getID = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.userService.get(this.getID).subscribe(res => {
-      console.log(res);
       this.updateForm.setValue({
         firstname: res['firstname'],
         lastname: res['lastname'],
