@@ -17,7 +17,7 @@
     <td>{{user.lastname}}</td>
     <td>{{user.email}}</td>
     <td>{{user.role | objecttoarray}}</td>
-    <td style="text-align: center;" ><button [routerLink]="['/edituser',user._id]"  class="editBtn">Edit</button></td>
+    <td style="text-align: center;" ><button [routerLink]="['/edituser/',user._id]"  class="editBtn">Edit</button></td>
     <td style="text-align: center;"><button  (click) = "delete(user._id, i)"  class="delBtn">Delete</button></td>
   </tr>
   

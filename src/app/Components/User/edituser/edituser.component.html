@@ -1,1 +1,37 @@
-<p>edituser works!</p>
+<div style="margin-top: 20px;">
+  <form [formGroup]="updateForm" (ngSubmit)="onUpdate()" style="margin-right: 30%; margin-left: 30%;">
+      <h3 class="title">{{title}}</h3>  
+
+  <div class= "container">
+
+    <div class="form-group">
+      <label for="firstname"><b>First Name:</b> </label>
+      <input class="form-control" type="text" formControlName="firstname" required >
+    </div>
+
+    <div class = "form-group">
+      <label for="lastname"><b>Last Name </b></label>
+      <input class="form-control" type="text" formControlName="lastname" required  >
+    </div>
+
+    <div class = "form-group">
+      <label for="email"><b>Email</b></label>
+      <input class="form-control" type="text" formControlName="email" required >
+    </div>
+
+  <div class = "form-group">
+    <label for="role"><b>Role </b></label>
+    <select class="form-control"  formControlName="role"  required >
+      <option value="6065e41222aef04b96b66dc3">Admin</option>
+      <option value="6065e3ac89e1f04accc64b41">User</option>
+    </select>
+  </div>
+  
+    <div class = "form-group">
+    <button class="submit">Update</button>
+    </div>
+
+    <button  class="backBtn"  routerLink="/Users/">Cancel</button>
+  </div>
+  </form>
+</div>

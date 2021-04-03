@@ -31,7 +31,7 @@ export class UserService {
 
 
     get(id: any): Observable<any> {
-      let authUrl = `${this.authUrl}/${id}`;
+      let authUrl = `${this.authUrl}/users/${id}`;
       return this.http.get(authUrl, {headers: this.httpHeaders})
         .pipe(map((res:any) => {
           return res || {}
@@ -41,7 +41,7 @@ export class UserService {
     }
 
     addUser(data: AuthModelForAllData ):Observable<any>{
-      let authUrl = `${this.authUrl + '/auth/register'}`;
+      let authUrl = `${this.authUrl}/auth/register`;
       return this.http.post(authUrl, data)
       .pipe(
         catchError(this.errorHandler)
@@ -51,7 +51,7 @@ export class UserService {
 
     
     deleteUser(id:any): Observable<any> {
-      let authUrl = `${this.authUrl + '/users/'}${id}`;
+      let authUrl = `${this.authUrl}/users/${id}`;
       return this.http.delete(authUrl, {headers: this.httpHeaders})
       .pipe(
         catchError(this.errorHandler)
@@ -59,7 +59,7 @@ export class UserService {
     }
   
     updateUser(id:any, data:any): Observable<any> {
-      let URL = `${this.authUrl}/${id}`;
+      let URL = `${this.authUrl}/users/${id}`;
       return this.http.put(URL, data, {headers: this.httpHeaders})
          .pipe(
            catchError(this.errorHandler)

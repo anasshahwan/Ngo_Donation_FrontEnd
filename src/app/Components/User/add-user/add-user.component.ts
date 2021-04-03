@@ -6,7 +6,7 @@ import {FormGroup, FormBuilder} from "@angular/forms";
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['../../css/basics.css','../../css/form.css']
+  styleUrls: ['../../css/basics.css','../../css/form.css','./add-user.component.css' ]
 })
 export class AddUserComponent implements OnInit {
   title="Add User";

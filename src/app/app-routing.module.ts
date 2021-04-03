@@ -12,6 +12,7 @@ import { CartComponent } from './Components/Cart/cart/cart.component';
 import { AuthGuard } from './Services/Auth/auth-guard.guard'
 import { NotfoundComponent } from './Components/notfound/notfound.component';
 import { AddUserComponent } from './Components/User/add-user/add-user.component';
+import { EdituserComponent} from './Components/User/edituser/edituser.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'Users', component:AllusersComponent , canActivate: [AuthGuard]},
   {path: 'addUser', component:AddUserComponent, canActivate: [AuthGuard]},
+  {path: 'edituser/:id', component:EdituserComponent, canActivate:[AuthGuard]},
 
   //Donation related paths
   {path: 'Donations', component:AllDonationsComponent, canActivate: [AuthGuard]},
@@ -29,6 +31,7 @@ const routes: Routes = [
   //Event related paths
   {path: 'Events', component:AlleventsComponent, canActivate: [AuthGuard]},
   {path: 'Events/add', component:AddeventComponent, canActivate: [AuthGuard]},
+
 
 
   //payment/cart related paths
