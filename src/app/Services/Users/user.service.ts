@@ -41,7 +41,7 @@ export class UserService {
     }
 
     addUser(data: AuthModelForAllData ):Observable<any>{
-      let authUrl = `${this.authUrl}/auth/register`;
+      let authUrl = `${this.authUrl + '/auth/register'}`;
       return this.http.post(authUrl, data)
       .pipe(
         catchError(this.errorHandler)
