@@ -8,3 +8,11 @@ export interface UserModelForAllData {
     token:string
 
 }
+
+export interface UserModelForUpdate { 
+    firstname:string,
+    lastname:string,
+    email: string,
+    role:any,
+
+}

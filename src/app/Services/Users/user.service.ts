@@ -1,7 +1,7 @@
 import { catchError, map} from 'rxjs/operators'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core';
-import { UserModelForAllData } from 'src/app/Models/UserModel';
+import { UserModelForAllData, UserModelForUpdate } from 'src/app/Models/UserModel';
 import { AuthModelForAllData } from 'src/app/Models/AuthModel';
 import { Observable, throwError } from 'rxjs';
 
@@ -65,7 +65,15 @@ export class UserService {
            catchError(this.errorHandler)
          )
     }
+
+
+    getUserByID(id: number): Observable<UserModelForUpdate> {
+      const url = `${this.authUrl}/users/${id}`;
+      return this.http.get<UserModelForUpdate>(url);
   
+    }
+  
+
 
     errorHandler(error:HttpErrorResponse){
       let errMsg = '';

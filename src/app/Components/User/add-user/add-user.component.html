@@ -8,31 +8,57 @@
         <input class="form-control" type="text" id="firstname" formControlName="firstname" required >
       </div>
 
+  <div *ngIf="userForm.controls['firstname'].invalid && (userForm.controls['firstname'].dirty || userForm.controls['firstname'].touched)" class="validationError">
+            <div  *ngIf="userForm.controls['firstname'].errors" >
+            First Name  Must be at least 3 characters.
+          </div>
+</div><br/>
+
       <div class = "form-group">
         <label for="lastname"><b>Last Name </b></label>
         <input class="form-control" type="text"  id="lastname" formControlName="lastname" required  >
       </div>
+       <div *ngIf="userForm.controls['lastname'].invalid && (userForm.controls['lastname'].dirty || userForm.controls['lastname'].touched)" class="validationError">
+            <div  *ngIf="userForm.controls['lastname'].errors" >
+            last Name  Must be at least 2 characters.
+          </div>
+</div>
+<br/>
 
       <div class = "form-group">
         <label for="email"><b>Email</b></label>
         <input class="form-control" type="text"  id="email" formControlName="email" required >
       </div>
+       <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="validationError">
+            <div  *ngIf="userForm.controls['email'].errors" >
+Email Must be Valid 
+          </div>
+</div>
+<br/>
 
     <div class = "form-group">
       <label for="password"><b>Password </b></label>
-      <input class="form-control"  type="text"  id="password" required >
+      <input class="form-control"  type="text"  id="password" formControlName="password" required >
     </div>
 
+ <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="validationError">
+            <div  *ngIf="userForm.controls['password'].errors" >
+            Password  Must be at least 6 characters.
+          </div>
+</div>
+<br/>
     <div class = "form-group">
       <label for="role"><b>Role </b></label>
       <select class="form-control"  formControlName="role" id="role" required >
-        <option value="6065e41222aef04b96b66dc3">Admin</option>
-        <option value="6065e3ac89e1f04accc64b41">User</option>
+         <option value="" selected disabled hidden>Choose Role</option>
+
+             <option *ngFor="let role of userRole;"  value="{{role._id}}">{{role.type}}</option>
+
       </select>
     </div>
     
       <div class = "form-group">
-      <button class="submit">Add User</button>
+      <button class="submit" [disabled] = '!userForm.valid'>Add User</button>
       <button class="backBtn"  routerLink="/Users/">Cancel</button>
       </div>
 
