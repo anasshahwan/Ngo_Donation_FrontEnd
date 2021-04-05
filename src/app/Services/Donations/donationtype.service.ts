@@ -33,4 +33,15 @@ export class DonationTypeService {
   
     }// End Function
 
+    addDonationsType(data:DonationTypeModel ):Observable<any>{
+      let donationTypeUrl = `${this.donationTypeUrl + '/donationTypes/addDonType'}`;
+      return this.http.post(donationTypeUrl, data)
+      .pipe(catchError((error: HttpErrorResponse) =>
+      { return throwError(error.message || 'server error');    
+            })
+            
+            );
+    
+      }// End Function
+
 }

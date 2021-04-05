@@ -1,14 +1,18 @@
 
 <app-topbar></app-topbar>
 
-<form class= "submit-form">
+<form class= "submit-form" [formGroup]="eventForm" (ngSubmit)="addEvent()" >
     <h3 class="title">{{title}}</h3>  
     <div class="container">
       <label for="eventName"><b>New Event </b></label>
-      <input type="text" placeholder="Event Name: " name="eventName" required>
+      <input type="text" placeholder="Event Name: " name="donName" formControlName="donName" required>
        
+      <div *ngIf="eventForm.controls['donName'].invalid && (eventForm.controls['donName'].dirty || eventForm.controls['donName'].touched)" class="validationError">
+        <div  *ngIf="eventForm.controls['donName'].errors" >
+         Event name must more than three characters
+        </div>
+        </div>
       <button class="submitBtn" type="submit">Add Event</button>
       <button  class="backBtn" [routerLink]="[allDonationsLink]">All Donations</button>
-
     </div>
   </form>

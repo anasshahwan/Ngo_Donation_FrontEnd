@@ -13,7 +13,6 @@ export class AlleventsComponent implements OnInit {
   
   title = "All Events";
    addshipmentinfoLink = "/Cart/addshipmentinfo";
-   events = ["Event1","Event2","Event3","Event4"];
    donationTypes:any;
   loading = true;
   constructor(private donationTypeService:DonationTypeService, private modalService: NgbModal) { }
