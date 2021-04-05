@@ -1,1 +1,31 @@
-<p>cart works!</p>
+<app-topbar></app-topbar>
+<h1>Cart Page</h1>
+<div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name </th>
+      <th scope="col">Price </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let item of cartItems'>
+      <th scope="row">{{item.item_name}}</th>
+      <td>{{item.item_price | currency}}</td>
+    </tr>
+  
+    <tr>
+    <td>Total</td>
+    <td></td>
+    </tr>
+  </tbody>
+</table>
+<button class='btn btn-danger' (click)="ClearShoppingCart()">Clear The Shopping Cart</button>
+&nbsp;
+<button class='btn btn-primary' routerLink = '/Events'>Continue Shopping </button>
+&nbsp;
+
+<button class='btn btn-secondary' routerLink = '/Cart/addshipmentinfo'>Check Out  </button>
+
+</div>

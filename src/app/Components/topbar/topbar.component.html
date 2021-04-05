@@ -1,15 +1,18 @@
-  <div class="cust_topnav">
+  <div class="cust_topnav" >
       
       <!-- Left-aligned links  -->
+
       <a routerLink="/home">Home</a>
-      <a routerLink="/Users">User Management</a>
-      <a routerLink="/Donations">Events Management</a>
+      <a routerLink="/Users" *ngIf="isAdmin">User Management</a>
+      <a routerLink="/Donations" *ngIf="isAdmin" >Events Management</a>
       <a routerLink="/Events">User View</a>
       
       
       <!-- Right-aligned links -->
       <div class="cust_topnav-right">
-       <a routerLink="/login" (click)='logOut()' >  username: LogOut</a>
+     <a *ngIf="currentUser.firstname">{{currentUser.firstname + " "  + currentUser.lastname }}: ( <span *ngIf="isAdmin">Admin </span><span *ngIf="!isAdmin">User </span> ) </a>
+
+       <a  routerLink="/login" (click)='logOut()' > LogOut</a>
       </div>
     </div>
     

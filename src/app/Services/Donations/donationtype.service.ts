@@ -1,17 +1,19 @@
+import { Injectable } from '@angular/core';
+
 
 import { catchError, map} from 'rxjs/operators'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
-import { Injectable } from '@angular/core';
 import { UserModelForAllData, UserModelForUpdate } from 'src/app/Models/UserModel';
 import { AuthModelForAllData } from 'src/app/Models/AuthModel';
 import { Observable, throwError } from 'rxjs'
 import { Roles } from 'src/app/Models/RolesModel';
+import { DonationTypeModel } from 'src/app/Models/DonationTypeModel';
 @Injectable({
   providedIn: 'root'
 })
-export class RolesService {
+export class DonationTypeService {
 
-  rolesUrl = 'http://localhost:3000';
+  donationTypeUrl = 'http://localhost:3000';
   
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -20,9 +22,9 @@ export class RolesService {
   constructor(private http: HttpClient) { }
 
 
-  getAllRoles():Observable<Roles[]> { 
+  getDonationsType():Observable<DonationTypeModel[]> { 
 
-    return this.http.get<Roles[]>(this.rolesUrl + '/roles/')
+    return this.http.get<DonationTypeModel[]>(this.donationTypeUrl + '/donationTypes/')
     .pipe(catchError((error: HttpErrorResponse) =>
     { return throwError(error.message || 'server error');    
           })

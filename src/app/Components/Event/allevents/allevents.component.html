@@ -1,5 +1,16 @@
+
+
 <app-topbar></app-topbar>
 
-<h3 class="title">{{title}}</h3>
+<div *ngIf="loading else loaded">
+<app-topbar></app-topbar>
 
-<button class="eventBtn" *ngFor="let event of events;" [routerLink]="[addshipmentinfoLink]">{{event}}</button>
+   <app-spinner></app-spinner>
+</div>
+<ng-template #loaded>
+ 
+<h3 class="title">Make a Donation</h3>
+<h4>click on any one donation type to continue:</h4>
+<button class="eventBtn" *ngFor="let type of donationTypes;" (click)="open(type._id,type.donName)" >{{type.donName}}</button>
+
+</ng-template>

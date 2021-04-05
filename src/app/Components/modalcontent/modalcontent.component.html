@@ -1,0 +1,23 @@
+
+<div class="modal-header">
+      <h6 class="modal-title">Please Tell Us How Much You Want to Donate to :  {{name}} </h6>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+     <form >
+     Please Enter the Amount : $ <input type='text'  [formControl]="price">
+     <div *ngIf="price.invalid && (price.dirty || price.touched)" class="validationError">
+            <div  *ngIf="price.errors" >
+            It Must Be Number 
+          </div>
+</div>
+     </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+      <button type="button" class="btn btn-danger" [disabled]= '!price.valid'(click)= 'addToCart()'>Add to Cart <i class="fa fa-shopping-cart"></i>
+ </button>
+
+      </div>

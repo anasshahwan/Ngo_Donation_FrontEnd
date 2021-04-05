@@ -21,7 +21,10 @@ import { AuthService } from './Services/Auth/auth-service.service';
 import { NotfoundComponent } from './Components/notfound/notfound.component';
 import { TopbarComponent } from './Components/topbar/topbar.component';
 import { ObjectToArrayPipe } from './Pipes/objecttoarray.pipe';
-
+import { SpinnerComponent } from './Components/spinner/spinner.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalcontentComponent } from './Components/modalcontent/modalcontent.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,9 @@ import { ObjectToArrayPipe } from './Pipes/objecttoarray.pipe';
     NotfoundComponent,
     TopbarComponent,
     ObjectToArrayPipe,
-   
+    SpinnerComponent,
+    ModalcontentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { ObjectToArrayPipe } from './Pipes/objecttoarray.pipe';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [HttpClientModule,AuthGuard, AuthService ],
   bootstrap: [AppComponent]
