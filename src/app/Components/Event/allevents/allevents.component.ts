@@ -7,7 +7,7 @@ import { ModalcontentComponent } from '../../modalcontent/modalcontent.component
 @Component({
   selector: 'app-allevents',
   templateUrl: './allevents.component.html',
-  styleUrls: ['../../css/basics.css','../../css/table.css']
+  styleUrls: ['./allevents.component.css']
 })
 export class AlleventsComponent implements OnInit {
   

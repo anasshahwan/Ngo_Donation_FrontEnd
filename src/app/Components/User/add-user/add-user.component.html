@@ -1,5 +1,5 @@
 <app-topbar></app-topbar>
-<div style="margin-top: 40px;">
+<div style="margin-top: 10px;">
 <form class="submit-form" [formGroup]="userForm" (ngSubmit)="onSubmit()" style="width: 40%;">
     <h3 class="title">{{title}}</h3>  
 
@@ -47,13 +47,11 @@ Email Must be Valid
           </div>
 </div>
 <br/>
-    <div class = "form-group">
+    <div class = "form-group" style="margin-bottom: 10px;">
       <label for="role"><b>Role </b></label>
-      <select class="form-control"  formControlName="role" id="role" required >
+      <select class="form-control" style="font-size: 14px; padding:0px;" formControlName="role" id="role" required >
          <option value="" selected disabled hidden>Choose Role</option>
-
-             <option *ngFor="let role of userRole;"  value="{{role._id}}">{{role.type}}</option>
-
+         <option *ngFor="let role of userRole;"  value="{{role._id}}">{{role.type}}</option>
       </select>
     </div>
     

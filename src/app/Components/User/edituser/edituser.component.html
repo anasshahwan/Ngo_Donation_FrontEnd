@@ -37,14 +37,14 @@
 <br/>
   <div class = "form-group">
     <label for="role"><b>Role </b></label>
-    <select class="form-control"  formControlName="role"  required >
+    <select class="form-control" style="font-size: 14px; padding:0px;" formControlName="role"  required >
       <option *ngFor="let role of userRole;"  value="{{role._id}}">{{role.type}}</option>
     </select>
   
 <br/>
   </div>
   
-    <div class = "form-group">
+    <div class = "form-group" style="margin-top: 20px;">
     <button class="submit" [disabled]= '!userUpdateForm.valid'>Update</button>
     </div>
 

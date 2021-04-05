@@ -1,5 +1,12 @@
+.label{
+    font-size: 6px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
 .form-group
 {
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-right: 40px;
     margin-left: 40px;
 }
@@ -9,8 +16,8 @@ button:disabled {
 
 .validationError{
      background-color: #f3f2f3;
-      padding: 10px;
+      padding: 8px;
       font-weight: bold;
       font-size: 15px;
       text-align: center;
-  }
+}

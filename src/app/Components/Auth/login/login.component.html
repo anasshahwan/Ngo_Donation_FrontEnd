@@ -1,43 +1,46 @@
-<form class= "submit-form" [formGroup]="userForm" (ngSubmit)="login()">
-    <h3 style="text-align: center;">Login</h3>
-    <div class="imgcontainer">
-      <img src="" alt="Logo" class="Logo">
-    </div>
-  
-    <div class="container">
-      <label for="uname"><b>Email</b></label>
-      <input type="text" placeholder="Email: " name="email" formControlName="email" required>
-  
-  <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="validationError">
-            <div  *ngIf="userForm.controls['email'].errors" >
-           Email must be valid 
-          </div>
-</div>
+<div class = "wrapper">
+  <div class = "one">
+    <form class= "login-form" [formGroup]="userForm" (ngSubmit)="login()">
+      <h3 style="text-align: center; margin-top:60px;">Login in to your account</h3>
 
+      <div class="container" >
+        <label for="uname"><b>Email</b></label>
+        <input type="text" placeholder="Email: " name="email" formControlName="email" required>
+    
+      <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="validationError">
+        <div  *ngIf="userForm.controls['email'].errors" >
+         Email must be valid 
+        </div>
+      </div>
 
+        <label for="psw"><b>Password</b></label>
 
-
-      <label for="psw"><b>Password</b></label>
-      
-      <input type="password" placeholder="Password: " name="password" formControlName="password" required>
-          
-     
-     <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="validationError">
+        <input type="password" placeholder="Password: " name="password" formControlName="password" required>
+            
+       
+        <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="validationError">
             <div  *ngIf="userForm.controls['password'].errors" >
-           Password must be more than 5 characters 
-          </div>
-</div>
-     
-     
-      <button type="submit" [disabled]="!userForm.valid">Login</button>
-      <p style="text-align: left;"><a href="#">Forgot Password?</a></p>
+             Password must be more than 5 characters 
+            </div>
+        </div>
+       
+       
+        <button class="submit_btn" type="submit" [disabled]="!userForm.valid">Login</button>
+        <p style="text-align: left;"><a href="#">Forgot Password?</a></p>
+      </div>
+  
+       <div  *ngIf="serverMsg" >
+      <p class='validationError'>{{serverMsg}}</p>
+            </div>
+  
+    </form>
+  </div>
+  <div class="two">
+    <p style="color: white; text-align: center; font-size:40px; margin-top: 60px; margin-bottom: 60px;">Welcome Back!</p>
+    <div class="imgcontainer">
+      <img src="assets/images/NGOLogo.png" alt="Logo" class="Logo">
     </div>
+    <p style="color: white; text-align: center; font-size: larger; margin-top: 60px;">Piece by piece, we can make the world a better place to be.</p>
 
-     <div  *ngIf="serverMsg" >
-    <p class='validationError'>{{serverMsg}}</p>
-          </div>
-
-  </form>
-  
-  
-  
+  </div>
+</div>
