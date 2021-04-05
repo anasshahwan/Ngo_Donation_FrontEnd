@@ -11,7 +11,7 @@
       <!-- Right-aligned links -->
       <div class="cust_topnav-right">
      <a *ngIf="currentUser.firstname">{{currentUser.firstname + " "  + currentUser.lastname }}: ( <span *ngIf="isAdmin">Admin </span><span *ngIf="!isAdmin">User </span> ) </a>
-
+      <a routerLink='/Cart/cart'><i class="fa fa-shopping-cart"></i> {{cartItemsLenght}} </a>
        <a  routerLink="/login" (click)='logOut()' > LogOut</a>
       </div>
     </div>

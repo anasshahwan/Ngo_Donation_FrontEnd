@@ -12,7 +12,8 @@ export class TopbarComponent implements OnInit {
   constructor(private _router :Router, private userService : UserService) { }
 
   ngOnInit(): void {
-    this.test();
+    this.getCurrentUser();
+    this.getCartItemsLenght();
     
   }
 
@@ -26,7 +27,7 @@ export class TopbarComponent implements OnInit {
   currentUser:any;
   isAdmin = false;
 
-  test(){
+  getCurrentUser(){
 
     var retrievedObject = localStorage.getItem('localStorageUserData') || '{}';
     this.currentUser = JSON.parse(retrievedObject);
@@ -44,6 +45,23 @@ export class TopbarComponent implements OnInit {
   
     }
    }// Check if User Logged IN 
+
+
+  cartItemsLenght = 0;
+  getCartItemsLenght(){
+    var oldData = JSON.parse(localStorage.getItem('cartItems') || 'null');
+
+    var retrievedObject = localStorage.getItem('localStorageUserData') || '{}';
+    var userID = JSON.parse(retrievedObject)._id;
+    for (let i = 0; i < oldData.length; i++) {
+      if(userID == oldData[i].user_id){
+       
+        this.cartItemsLenght += 1
+        console.log(this.cartItemsLenght)
+        }
+    }
+    // this.cartItems = this.userCart;
+     }
 
    getUserByID(id: number){
 
