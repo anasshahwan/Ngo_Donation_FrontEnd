@@ -24,6 +24,7 @@ import { ObjectToArrayPipe } from './Pipes/objecttoarray.pipe';
 import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalcontentComponent } from './Components/modalcontent/modalcontent.component';
+import { NgxPaginationModule } from 'ngx-pagination';
  
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ModalcontentComponent } from './Components/modalcontent/modalcontent.co
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
+    NgxPaginationModule,
   ],
   providers: [HttpClientModule,AuthGuard, AuthService ],
   bootstrap: [AppComponent]

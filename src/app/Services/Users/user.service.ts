@@ -72,6 +72,21 @@ export class UserService {
       return this.http.get<UserModelForUpdate>(url);
   
     }
+
+
+    // Pagination 
+
+  getAllPaginatedUsers():Observable<UserModelForAllData[]> { 
+
+    return this.http.get<UserModelForAllData[]>(this.authUrl + '/users/pagination')
+    .pipe(catchError((error: HttpErrorResponse) =>
+    { return throwError(error.message || 'server error');    
+          })
+          
+          );
+  
+    }// End Function 
+
   
 
 
