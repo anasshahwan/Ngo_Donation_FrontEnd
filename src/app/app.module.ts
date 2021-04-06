@@ -25,6 +25,9 @@ import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalcontentComponent } from './Components/modalcontent/modalcontent.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdateEventComponent } from './Components/Event/update-event/update-event.component';
+import { EventManagementComponent } from './Components/Event/event-management/event-management.component';
  
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ObjectToArrayPipe,
     SpinnerComponent,
     ModalcontentComponent,
+    UpdateEventComponent,
+    EventManagementComponent,
 
   ],
   imports: [
@@ -56,6 +61,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     NgbModule,
     NgxPaginationModule,
+    BrowserAnimationsModule,
   ],
   providers: [HttpClientModule,AuthGuard, AuthService ],
   bootstrap: [AppComponent]

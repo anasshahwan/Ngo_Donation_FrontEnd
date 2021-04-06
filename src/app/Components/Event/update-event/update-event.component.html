@@ -1,0 +1,21 @@
+<app-topbar></app-topbar>
+<div *ngIf="(currentDonType$|async) as event">
+<form [formGroup]="UpdateEventForm" (ngSubmit) ="onUpdate()" class= "submit-form" style="margin-top: 40px; width: 400px;">
+    <h3 class="title" style="text-align:center;">{{title}}</h3>  
+    <div class="container">
+      <div class ="form-group">
+        <label for="donName">New Event</label>
+        <input type="text" placeholder="Event Name: " formControlName="donName" required>
+      </div>
+      
+      <div style="width: 100px; margin-top: 10px; margin-bottom: 10px; ">
+        <label for="isActive" class="checkboxes">Active:<input type="checkbox" id="checkbox1" name="checked" value=1 class="checkboxes"/>
+        </label>
+      </div>
+      
+      <button class="submitBtn" type="submit">Update Event</button>
+      <button  class="backBtn" [routerLink]="[allDonationsLink]">All Donations</button>
+
+    </div>
+  </form>
+</div>

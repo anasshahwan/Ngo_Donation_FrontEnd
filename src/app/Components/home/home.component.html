@@ -1,10 +1,53 @@
-
-<body>
-  
-<app-topbar></app-topbar>
+<div class="UserView" >
+    <app-topbar></app-topbar>
 
     <div style="padding-left:16px">
       <router-outlet></router-outlet>
     </div>
-    </body>
+
+    <div class="view">
+      <div id="slideshow">
+        <div class="slide-wrapper">
+          <!-- Image 1 -->
+          <div class="slide">
+            <h1 class="slide-number">
+              <img class="image" src="assets/images/charity.jpg" alt="Charity" style="width:100%">
+            </h1>
+          </div>
+          <!-- Image 2-->
+          <div class="slide">
+            <h1 class="slide-number">
+              <img class="image" src="assets/images/animal_welfare.jpg" alt="Charity" style="width:100%">
+            </h1>
+          </div>
+          <!-- Image 3 -->
+          <div class="slide">
+            <h1 class="slide-number">
+              <img class="image" src="assets/images/charity2.jpg" alt="Charity" style="width:100%">
+            </h1>
+          </div>
+          <!--  Image 4 -->
+          <div class="slide">
+            <h1 class="slide-number">
+              <img class="image" src="assets/images/charity3.jpg" alt="Charity" style="width:100%">
+            </h1>
+          </div>
+          <!--  Image 5 -->
+          <div class="slide">
+            <h1 class="slide-number">
+              <img class="image" src="assets/images/charity4.jpg" alt="Charity" style="width:100%">
+            </h1>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+    <div style="overflow: hidden;">
+      <iframe src="http://localhost:4200/Events" onload="this.width=screen.width;this.height=screen.height;"  ></iframe>
+
+    </div>
+   
+    
+  </div>
     

@@ -1,12 +1,16 @@
 
 <app-topbar></app-topbar>
 
-<form class= "submit-form">
+<form class= "submit-form" style="margin-top: 40px; width: 400px;">
     <h3 class="title">{{title}}</h3>  
     <div class="container">
-      <label for="eventName"><b>New Event </b></label>
+      <label for="eventName">New Event</label>
       <input type="text" placeholder="Event Name: " name="eventName" required>
-       
+      <div style="width: 100px; margin-top: 10px; margin-bottom: 10px; ">
+        <label for="isActive" class="checkboxes">Active:<input type="checkbox" id="checkbox1" name="checked" value=1 class="checkboxes"/>
+        </label>
+      </div>
+      
       <button class="submitBtn" type="submit">Add Event</button>
       <button  class="backBtn" [routerLink]="[allDonationsLink]">All Donations</button>
 

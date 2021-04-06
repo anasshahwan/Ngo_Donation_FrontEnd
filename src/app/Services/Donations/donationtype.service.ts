@@ -13,7 +13,7 @@ import { DonationTypeModel } from 'src/app/Models/DonationTypeModel';
 })
 export class DonationTypeService {
 
-  donationTypeUrl = 'http://localhost:3000';
+  donationTypeUrl = 'http://localhost:3000/donationTypes/';
   
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -24,7 +24,7 @@ export class DonationTypeService {
 
   getDonationsType():Observable<DonationTypeModel[]> { 
 
-    return this.http.get<DonationTypeModel[]>(this.donationTypeUrl + '/donationTypes/')
+    return this.http.get<DonationTypeModel[]>(this.donationTypeUrl)
     .pipe(catchError((error: HttpErrorResponse) =>
     { return throwError(error.message || 'server error');    
           })
@@ -32,5 +32,47 @@ export class DonationTypeService {
           );
   
     }// End Function
+
+     //donationType/id
+  get(id: any): Observable<any> {
+    let Url = `${this.donationTypeUrl}${id}`;
+    return this.http.get(Url, {headers: this.httpHeaders})
+     .pipe(map((res: any) => {
+       return res || {}
+     }),
+     catchError(this.errorHandler)
+     )
+  }
+  
+ addEvent(data: DonationTypeModel):Observable<any>{
+   let URL = `${this.donationTypeUrl  + '/addDonType'}`;
+   return this.http.post(URL, data)
+   .pipe(
+     catchError(this.errorHandler)
+   )
+ }
+
+ 
+ updateEvent(id:any, data:any): Observable<any> {
+   let URL = `${this.donationTypeUrl}${id}`;
+   return this.http.put(URL, data, {headers: this.httpHeaders} )
+   .pipe(
+     catchError(this.errorHandler)
+   )
+ }
+
+
+  errorHandler(error:HttpErrorResponse){
+    let errMsg = '';
+    if (error.error instanceof ErrorEvent){
+      errMsg = error.error.message;
+    }
+    else{
+      errMsg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errMsg);
+    return throwError(errMsg);
+  }
+
 
 }

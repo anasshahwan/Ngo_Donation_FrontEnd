@@ -1,0 +1,23 @@
+<app-topbar></app-topbar>
+   <body style="padding-left:16px;">
+      <div *ngIf="loading else loaded">
+         <app-topbar></app-topbar>
+         
+            <app-spinner></app-spinner>
+         </div>
+         <ng-template #loaded>
+          
+         <h3 class="title" style="text-align: center; margin-top: 20px;">Event Management</h3>
+         
+         <div class="row">
+            <div class="column" *ngFor="let type of donationTypes;" routerLink="/Events/edit/{{type._id}}">
+              <div class="card">
+              <img src="assets/images/NGOLogo.png" alt="Event" style="width:100%">
+                <p style="margin-top: 12px;"></p>
+                <p>{{type.donName}}</p>
+              </div>
+            </div>   
+          </div>
+               
+         </ng-template>
+   </body>
