@@ -24,7 +24,8 @@ export class UserinformationComponent implements OnInit {
     private fb: FormBuilder,) { }
 
   ngOnInit(): void {
-    console.log(this.childMessage + "okok")
+    console.log(this.childMessage)
+   
     this.getUserInformation();
     this.currentInfo$.subscribe(user => {
         this.userEditInfoForm = this.fb.group({

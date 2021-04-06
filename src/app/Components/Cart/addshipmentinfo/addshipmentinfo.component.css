@@ -1,0 +1,10 @@
+.col-4.fix { 
+    margin-top: 50px!important;
+}
+
+.creditCard{
+    padding:20px;
+    text-align:center;
+    /* display: flex;
+    justify-content: center; */
+}

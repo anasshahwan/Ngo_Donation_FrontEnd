@@ -25,6 +25,9 @@ import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalcontentComponent } from './Components/modalcontent/modalcontent.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserinformationComponent } from './Components/User/userinformation/userinformation.component';
+import { ToarrayPipe } from './Pipes/toarray.pipe';
+import { PaysucessfullyComponent } from './Components/paysucessfully/paysucessfully.component';
  
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ObjectToArrayPipe,
     SpinnerComponent,
     ModalcontentComponent,
+    UserinformationComponent,
+    ToarrayPipe,
+    PaysucessfullyComponent,
 
   ],
   imports: [

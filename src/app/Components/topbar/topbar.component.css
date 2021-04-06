@@ -1,4 +1,4 @@
-
+/* 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +35,7 @@ body {
     float: right;
 }
   
-  /* Responsive navigation menu (for mobile devices) */
+  /* Responsive navigation menu (for mobile devices)
   @media screen and (max-width: 600px) {
     .cust_topnav a, .topnav-right {
       float: none;
@@ -48,4 +48,12 @@ body {
       left: 0;
       transform: none;
     }
+  } */
+  .nav-link {
+    color: rgb(255 157 157 / 90%)!important;
+  }
+
+  .active{
+    color:white !important;;
+    font-weight: bold;
   }

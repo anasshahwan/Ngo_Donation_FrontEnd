@@ -1,0 +1,8 @@
+.center {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  }

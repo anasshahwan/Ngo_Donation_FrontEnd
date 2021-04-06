@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,13 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  @Input() childMessage:any;
   cartItems : any;
   userCart =[{}] ;
+  totalPrice :number = 0;
+  isCartEmpty = true;
+
 
   constructor(private _router:Router) { }
 
   ngOnInit(): void {
     this.getCartItems();
+    
+    console.log(this.childMessage+ " okkk");
   }
 
   cartItemsLenght = 0;
@@ -24,15 +30,23 @@ export class CartComponent implements OnInit {
 
     var retrievedObject = localStorage.getItem('localStorageUserData') || '{}';
     var userID = JSON.parse(retrievedObject)._id;
+    if(oldData == null){  
+    }else{
     for (let i = 0; i < oldData.length; i++) {
       if(userID == oldData[i].user_id){
+        
         console.log('True')
         this.userCart.push(oldData[i]);
         this.cartItems = this.userCart.slice(1)
+        this.totalPrice += parseInt(this.cartItems[i].item_price);
         this.cartItemsLenght += 1
         console.log(this.cartItemsLenght)
+        this.isCartEmpty= false;
+
         }
     }
+
+  }//else 
     console.log(this.userCart)
     // this.cartItems = this.userCart;
    

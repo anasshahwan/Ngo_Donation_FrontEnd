@@ -73,6 +73,20 @@ export class UserService {
   
     }
 
+    getUserProfileByID(id: number){
+      const url = `${this.authUrl}/users/userinformation/${id}`;
+      return this.http.get(url);
+  
+    }
+
+    updateUserShippingInfo(id:any, data:any): Observable<any> {
+      let URL = `${this.authUrl}/users/updateuserinfo/${id}`;
+      return this.http.put(URL, data, {headers: this.httpHeaders})
+         .pipe(
+           catchError(this.errorHandler)
+         )
+    }
+
 
     // Pagination 
 
@@ -80,11 +94,7 @@ export class UserService {
 
     return this.http.get<UserModelForAllData[]>(this.authUrl + '/users/pagination')
     .pipe(catchError((error: HttpErrorResponse) =>
-    { return throwError(error.message || 'server error');    
-          })
-          
-          );
-  
+    { return throwError(error.message || 'server error');  }));
     }// End Function 
 
   

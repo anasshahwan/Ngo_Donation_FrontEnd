@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationService } from 'src/app/Services/Donations/donation.service';
 
 @Component({
   selector: 'app-all-donations',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllDonationsComponent implements OnInit {
   addEventLink = '/Events/add'
-  constructor() { }
+  constructor(private donationService:DonationService) { }
+  donationsData:any;
 
   ngOnInit(): void {
+    this.getAllDonations()
+  }
+
+  getAllDonations(){
+    this.donationService.getAllDonations().subscribe(data=>{
+      console.log(data);
+      this.donationsData = data
+    })
   }
 
 }

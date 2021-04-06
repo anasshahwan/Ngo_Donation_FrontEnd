@@ -1,23 +1,53 @@
-  <div class="cust_topnav "  >
-      
-      <!-- Left-aligned links  -->
 
-      <a routerLink="/home">Home</a>
-      <a routerLink="/Users" *ngIf="isAdmin">User Management</a>
-      <a routerLink="/Donations" *ngIf="isAdmin" >Events Management</a>
-      <a routerLink="/Events">User View</a>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light " style='background-color:#2B2D42;color:white;'>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item active">
       
-      
-      <!-- Right-aligned links -->
-      <div class="cust_topnav-right">
-     <a *ngIf="currentUser.firstname">{{currentUser.firstname + " "  + currentUser.lastname }}: ( <span *ngIf="isAdmin">Admin </span><span *ngIf="!isAdmin">User </span> ) </a>
+        <a  routerLinkActive="active current" class="nav-link" routerLink="/home">Home</a>
+     
+      </li>
+      <li class="nav-item">
+       
+        <a  routerLinkActive="active current" class="nav-link"  routerLink="/Users" *ngIf="isAdmin">User Management</a>
+
+      </li>
+     
+      <li class="nav-item">
+        <a routerLinkActive="active current"  class='nav-link' routerLink="/Donations" *ngIf="isAdmin" >Events Management</a>
+      </li>
+  <li class="nav-item">
+<a  routerLinkActive="active current" class="nav-link" routerLink="/Events">User View</a>
+
+      </li>
+
+
+    </ul>
+    <div class=" my-2 my-lg-0">
+
+
       <a routerLink='/Cart/cart'><i class="fa fa-shopping-cart"></i> {{cartItemsLenght}} </a>
-     <a type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
-       [ngbPopover]="popContent" [popoverTitle]="popTitle">
-  Popover on bottom
+
+     <a type="button"  placement="bottom"
+       [ngbPopover]="popContent" >
+  <a *ngIf="currentUser.firstname">{{currentUser.firstname + " "  + currentUser.lastname }}: ( <span *ngIf="isAdmin">Admin </span><span *ngIf="!isAdmin">User </span> ) </a>
+  <i class="fa fa-user" aria-hidden="true"></i>
+
 </a>
-<ng-template #popContent>Hello,  <a  routerLink="/login" (click)='logOut()' > LogOut</a></ng-template>
-<ng-template #popTitle>Fancy <b>content!!</b></ng-template>
-      </div>
+
+<ng-template #popContent style='width:400px'>
+<a   routerLink="/userInformation" > Edit Profile | </a>
+<a  routerLink="/login" (click)='logOut()' > LogOut</a>
+
+</ng-template>
+
     </div>
-    
+  </div>
+</nav>

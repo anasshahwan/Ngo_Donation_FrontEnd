@@ -5,7 +5,6 @@
  <div style="margin-bottom:5px;"></div>
 <div>
     
-    <button  class="addBtn" [routerLink]="[addEventLink]">Add Event</button>
 </div>
  <table id="donation_table">
    <tr>
@@ -16,12 +15,18 @@
     
    </tr>
     <!-- Placholder data!!!!  Please replace with database data -->  
-   <tr> 
-     <td>TestFirstName TestLastName</td>
-     <td>4/1/2021</td>  <!-- replace later with {{ dateObj | date:'shortDate' }}-->
-     <td>{{ 1831521| currency:'USD' }} </td> 
-     <td>DonationType</td>
-    
+   <tr *ngFor="let donation of donationsData"> 
+     <td>{{donation.userId.firstname + " " + donation.userId.lastname}}</td>
+     <td>{{donation.dateCreated | date }} , {{donation.dateCreated | date:'shortTime'}}</td>  <!-- replace later with {{ dateObj | date:'shortDate' }}-->
+     <td>{{ donation.amount| currency:'USD' }} </td> 
+   <div style = 'display:flex;padding:10px;'>  
+<div *ngFor= "let type of donation.donType" >
+          <span>
+({{type.donName }} )  &nbsp;     
+   </span>
+         </div>
+     
+    </div >
    </tr>
  </table>
 </div>

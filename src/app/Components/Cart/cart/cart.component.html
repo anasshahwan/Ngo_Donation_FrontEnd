@@ -1,7 +1,19 @@
-<h1>Cart Page</h1>
+<app-topbar *ngIf='childMessage != false'></app-topbar>
+
+<div class='container mt-5'>
+
+<h5 *ngIf='!childMessage'>Summary </h5>
 <div>
 
-<table class="table">
+
+<div *ngIf="isCartEmpty" class="card mb-3">
+  <div class="card-body">
+   Your Cart is Empty ..
+  </div>
+</div>
+
+
+<table class="table" *ngIf="!isCartEmpty">
   <thead>
     <tr>
       <th scope="col">Name </th>
@@ -15,16 +27,26 @@
     </tr>
   
     <tr>
-    <td>Total</td>
-    <td></td>
+    <td>Total: </td>
+    <td>{{totalPrice | currency}}</td>
     </tr>
   </tbody>
+
+
+
+
+
 </table>
-<button class='btn btn-danger' (click)="ClearShoppingCart()">Clear The Shopping Cart</button>
-&nbsp;
 <button class='btn btn-primary' routerLink = '/Events'>Continue Shopping </button>
 &nbsp;
 
-<button class='btn btn-secondary' routerLink = '/Cart/addshipmentinfo'>Check Out  </button>
+<button class='btn btn-danger' *ngIf="childMessage != false && !isCartEmpty"  (click)="ClearShoppingCart()">Clear The Shopping Cart</button>
 
+<button class='btn btn-danger' *ngIf="childMessage"  (click)="ClearShoppingCart()">Clear The Shopping Cart</button>
+&nbsp;
+ <button *ngIf="childMessage != false && !isCartEmpty" class='btn btn-secondary' routerLink = '/Cart/addshipmentinfo'>Check Out  </button>
+
+ <button *ngIf="childMessage" class='btn btn-secondary' routerLink = '/Cart/addshipmentinfo'>Check Out  </button>
+
+</div>
 </div>
