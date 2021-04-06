@@ -1,0 +1,57 @@
+<app-topbar *ngIf="childMessage != false"></app-topbar>
+
+<div class='container mt-5' *ngIf="(currentInfo$ | async) as user">
+    <h3 *ngIf="childMessage == false">Your Shipping Information</h3>
+    <h3 *ngIf="childMessage != false" class="title mb-2" style='text-align:center;'>Edit Your Information </h3>  
+
+<form class= "edituser-form"  [formGroup]="userEditInfoForm" (ngSubmit)="onUpdate()" >
+
+
+    <div class="container">
+      <label for="firstName"><b>First Name </b></label>
+      <input type="text" placeholder="First Name: " name="firstName" formControlName="firstname"  readonly="readonly" required>
+       
+      <label for="lastName"><b>Last Name </b></label>
+      <input type="text" placeholder="Last Name: " name="lastName"  formControlName="lastname" readonly="readonly" required>
+       
+ 
+      <label for="cmaNumber"><b>CMA# </b></label>
+      <input type="text" placeholder="CMA#: " name="cmaNumber" formControlName="cma"  required>
+       
+ 
+      <label for="phoneNumber"><b>Phone </b></label>
+      <input type="text" placeholder="Phone: " name="phoneNumber"  formControlName="phone_number" required>
+       
+ 
+      <label for="emailAddress"><b>Email Address </b></label>
+      <input  type="text" placeholder="Email Address: " name="emailAddress" formControlName="email"  readonly="readonly" required>
+       
+ 
+      <label for="address1"><b>Address  </b></label>
+      <input type="text" placeholder="Address : " name="address" formControlName="address" required>
+       
+     
+  
+      <label for="city"><b>City </b></label>
+      <input type="text" placeholder="City: " name="city" formControlName="city" required>
+       
+  
+      <label for="state"><b>State </b></label>
+      <input type="text" placeholder="State: " name="state" formControlName="state" required>
+       
+  
+      <label for="zipCode"><b>Zip/Postal Code </b></label>
+      <input type="text" placeholder="Zip/Postal Code: " name="zipCode" formControlName="zip_code" required>
+       
+  
+      <label for="country"><b>Country </b></label>
+      <input type="text" placeholder="Country: " name="country" formControlName="country" required>
+    
+        
+      <button *ngIf="childMessage != false" class="submitBtn" type="submit">Edit User Information</button>
+       <button   *ngIf="childMessage != false"  class="cancelBtn" >Back</button>
+
+      
+    </div>
+   </form>
+</div>

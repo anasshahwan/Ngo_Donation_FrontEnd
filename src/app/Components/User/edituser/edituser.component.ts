@@ -15,15 +15,7 @@ import { Roles } from 'src/app/Models/RolesModel';
   styleUrls: ['../../css/basics.css','../../css/form.css','./edituser.component.css']
 })
 export class EdituserComponent implements OnInit {
-  // currentUser: UserModelForAllData = {
-  //   _id: '',
-  //   firstname: '',
-  //   lastname: '',
-  //   email: '',
-  //   password: '',
-  //   role:'',
-  //   token: ''
-  // };
+
   title="Update User Info";
   getID: any;
   currentEmp$:Observable<UserModelForUpdate>;
