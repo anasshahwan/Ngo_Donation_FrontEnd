@@ -1,6 +1,6 @@
 <app-topbar></app-topbar>
-<div *ngIf="(currentDonType$|async) as event">
-<form [formGroup]="UpdateEventForm" (ngSubmit) ="onUpdate()" class= "submit-form" style="margin-top: 40px; width: 400px;">
+<div *ngIf="(currentEvent$ | async) as eventType">
+<form [formGroup]="eventUpdateForm" (ngSubmit)="onUpdate()" class= "submit-form" style="margin-top: 40px; width: 400px;" >
     <h3 class="title" style="text-align:center;">{{title}}</h3>  
     <div class="container">
       <div class ="form-group">
@@ -9,7 +9,7 @@
       </div>
       
       <div style="width: 100px; margin-top: 10px; margin-bottom: 10px; ">
-        <label for="isActive" class="checkboxes">Active:<input type="checkbox" id="checkbox1" name="checked" value=1 class="checkboxes"/>
+        <label for="isActive" class="checkboxes">Active:<input type="checkbox" id="checkbox1" formControlName="isActive" value=1 class="checkboxes"/>
         </label>
       </div>
       

@@ -13,6 +13,8 @@ import { AuthGuard } from './Services/Auth/auth-guard.guard'
 import { NotfoundComponent } from './Components/notfound/notfound.component';
 import { AddUserComponent } from './Components/User/add-user/add-user.component';
 import { EdituserComponent} from './Components/User/edituser/edituser.component';
+import { EditEventComponent } from './Components/Event/edit-event/edit-event.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
@@ -31,7 +33,8 @@ const routes: Routes = [
   //Event related paths
   {path: 'Events', component:AlleventsComponent, canActivate: [AuthGuard]},
   {path: 'Events/add', component:AddeventComponent, canActivate: [AuthGuard]},
-
+  {path: 'Events/edit/:id', component:EditEventComponent, canActivate: [AuthGuard]},
+  
 
 
   //payment/cart related paths

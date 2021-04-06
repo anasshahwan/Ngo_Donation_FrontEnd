@@ -13,8 +13,8 @@
      <a *ngIf="currentUser.firstname">{{currentUser.firstname + " "  + currentUser.lastname }}: ( <span *ngIf="isAdmin">Admin </span><span *ngIf="!isAdmin">User </span> ) </a>
       <a routerLink='/Cart/cart'><i class="fa fa-shopping-cart"></i> {{cartItemsLenght}} </a>
      <a type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
-       [ngbPopover]="popContent" [popoverTitle]="popTitle">
-  Popover on bottom
+       [ngbPopover]="popContent" [popoverTitle]="popTitle"> 
+       {{currentUser.firstname + " "  + currentUser.lastname }}: (<span *ngIf="isAdmin">Admin </span><span *ngIf="!isAdmin">User </span>)
 </a>
 <ng-template #popContent>Hello,  <a  routerLink="/login" (click)='logOut()' > LogOut</a></ng-template>
 <ng-template #popTitle>Fancy <b>content!!</b></ng-template>

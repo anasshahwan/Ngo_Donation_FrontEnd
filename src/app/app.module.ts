@@ -26,8 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalcontentComponent } from './Components/modalcontent/modalcontent.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UpdateEventComponent } from './Components/Event/update-event/update-event.component';
-import { EventManagementComponent } from './Components/Event/event-management/event-management.component';
+import { EditEventComponent } from './Components/Event/edit-event/edit-event.component';
  
 @NgModule({
   declarations: [
@@ -49,8 +48,7 @@ import { EventManagementComponent } from './Components/Event/event-management/ev
     ObjectToArrayPipe,
     SpinnerComponent,
     ModalcontentComponent,
-    UpdateEventComponent,
-    EventManagementComponent,
+    EditEventComponent,
 
   ],
   imports: [
