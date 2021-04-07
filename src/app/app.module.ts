@@ -28,6 +28,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { UserinformationComponent } from './Components/User/userinformation/userinformation.component';
 import { ToarrayPipe } from './Pipes/toarray.pipe';
 import { PaysucessfullyComponent } from './Components/paysucessfully/paysucessfully.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditEventComponent } from './Components/Event/edit-event/edit-event.component';
  
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { PaysucessfullyComponent } from './Components/paysucessfully/paysucessfu
     UserinformationComponent,
     ToarrayPipe,
     PaysucessfullyComponent,
+    EditEventComponent,
 
   ],
   imports: [
@@ -62,6 +65,7 @@ import { PaysucessfullyComponent } from './Components/paysucessfully/paysucessfu
     ReactiveFormsModule,
     NgbModule,
     NgxPaginationModule,
+    BrowserAnimationsModule,
   ],
   providers: [HttpClientModule,AuthGuard, AuthService ],
   bootstrap: [AppComponent]

@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
   currentUser = {'token':'',
   '_id':''
 };  
+
+  childMessage = "testMessage"
+  disableTag = false;
+
   constructor(private _router:Router) {}
 
   ngOnInit(): void {

@@ -10,6 +10,7 @@ import { UserService } from 'src/app/Services/Users/user.service';
 })
 export class AllusersComponent implements OnInit {
   users: UserModelForAllData[];
+  currentUser:any;
   errorMsg: any;
   addUserLink = '/addUser';
   constructor(private userService:UserService,private _router:Router) { }
@@ -35,9 +36,11 @@ export class AllusersComponent implements OnInit {
   totalLength:any;
   page:number = 1;
   pagUsers : any;
-
+  
   getAllPaginatedUsers (){
-    this.userService.getAllUsers().subscribe(
+   const retrievedObject = localStorage.getItem('localStorageUserData') || '{}';
+    this.currentUser = JSON.parse(retrievedObject);
+     this.userService.getAllUsers().subscribe(
       users => { 
         console.log(users);
         this.pagUsers = users;

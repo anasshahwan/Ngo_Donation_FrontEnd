@@ -1,4 +1,4 @@
-<app-topbar></app-topbar>
+<app-topbar *ngIf='childMessage != false'></app-topbar>
    <body style="padding-left:16px;">
       <div *ngIf="loading else loaded">
          
@@ -6,14 +6,20 @@
          </div>
          <ng-template #loaded>
           
-         <h3 class="title">Make a Donation</h3>
+         <h3 class="title" style="text-align: center; margin-top: 20px;">Make a Donation</h3>
          
          <div class="row">
-            <div class="column"  *ngFor="let type of donationTypes;" (click)="open(type._id,type.donName)" >
+            <div class="column"  *ngFor="let type of donationTypes;"  (click)="open(type._id,type.donName)" >
               <div class="card">
               <img src="assets/images/NGOLogo.png" alt="Event" style="width:100%">
                 <p style="margin-top: 12px;"></p>
                 <p>{{type.donName}}</p>
+                
+                <div *ngIf="isAdmin">
+                  <p>Active: {{type.isActive}}</p>  
+                 <button [routerLink]="['/Events/edit/',type._id]" class="btn"> Update </button>  
+                </div>
+                
               </div>
             </div>   
           </div>

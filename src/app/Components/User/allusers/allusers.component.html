@@ -11,18 +11,20 @@
     <th></th>
     <th></th>
   </tr>
-  
-  <tr *ngFor="let user of pagUsers | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }">
-    <td>{{user.firstname}}</td>
-    <td>{{user.lastname}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.role | objecttoarray}}</td>
-    <td style="text-align: center;" ><button [routerLink]="['/edituser/',user._id]"  class="editBtn">Edit</button></td>
-    <td style="text-align: center;"><button  (click) = "delete(user._id, 1)"  class="delBtn">Delete</button></td>
+  <tr  *ngFor="let user of pagUsers | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }">
+    
+    <td *ngIf="currentUser._id != user._id">{{user.firstname}}</td>
+    <td *ngIf="currentUser._id != user._id">{{user.lastname}}</td>
+    <td *ngIf="currentUser._id != user._id">{{user.email}}</td>
+    <td *ngIf="currentUser._id != user._id">{{user.role | objecttoarray}}</td>
+    <td style="text-align: center;"  *ngIf="currentUser._id != user._id"><button [routerLink]="['/edituser/',user._id]"  class="editBtn">Edit</button></td>
+    <td style="text-align: center;" *ngIf="currentUser._id != user._id"><button  (click) = "delete(user._id, 1)"  class="delBtn">Delete</button></td>
   </tr>
-      <pagination-controls (pageChange)="page = $event"></pagination-controls>
 
 </table>
+<div style='text-align:center; margin-top:10px;'>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
 </div>
 
 

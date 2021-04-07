@@ -15,6 +15,8 @@ import { AddUserComponent } from './Components/User/add-user/add-user.component'
 import { EdituserComponent} from './Components/User/edituser/edituser.component';
 import { UserinformationComponent } from './Components/User/userinformation/userinformation.component';
 import { PaysucessfullyComponent } from './Components/paysucessfully/paysucessfully.component';
+import { EditEventComponent } from './Components/Event/edit-event/edit-event.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
@@ -34,7 +36,8 @@ const routes: Routes = [
   //Event related paths
   {path: 'Events', component:AlleventsComponent, canActivate: [AuthGuard]},
   {path: 'Events/add', component:AddeventComponent, canActivate: [AuthGuard]},
-
+  {path: 'Events/edit/:id', component:EditEventComponent, canActivate: [AuthGuard]},
+  
 
   {path: 'paysuccessfully', component:PaysucessfullyComponent, canActivate: [AuthGuard]},
 
